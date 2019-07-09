@@ -16,7 +16,7 @@ phases:
     commands:
       - echo Build started on `date`
       - cd conf
-	    - protractor single.conf.js
+      - protractor single.conf.js
 artifacts:
   files:
       - '**/*'
