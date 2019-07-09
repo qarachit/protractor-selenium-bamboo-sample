@@ -1,0 +1,24 @@
+version: 0.2
+env:
+  variables:
+    LT_USERNAME: 'robovipin'
+	  LT_ACCESS_KEY: 'bX3VZpiN4Tp7cLD7MTfoXqqOZK3q7Xov7UcSCwGQkzf1MEB6bI'
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+      - npm install -g protractor
+  build:
+    commands:
+      - echo Build started on `date`
+      - cd conf
+	    - protractor single.conf.js
+artifacts:
+  files:
+      - '**/*'
+  base-directory: 'dist*'
+discard-paths: yes
